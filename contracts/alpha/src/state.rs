@@ -11,7 +11,7 @@ pub struct Config {
 	pub message: String
 }
 
-#[derive(Serialize, Deserialize, PartialEq, Debug, JsonSchema)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug, JsonSchema)]
 pub struct Reply {
     pub text: String
 }
