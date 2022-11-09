@@ -1,19 +1,19 @@
 const bre = require('cudos-blast')
 
 async function main() {
-  const [alice, bob] = await bre.getSigners()
-  const contract = await bre.getContractFromAddress('cudos1uul3yzm2lgskp3dxpj0zg558hppxk6pt8t00qe')
+  const [alice, bob, bree] = await bre.getSigners()
+  const contract = await bre.getContractFromAddress('cudos1zz89vvmdwxuww63034jhdvtu449w7hxyd4zt3rwylryd2nm3rkuqm37cut')
+  // cudos14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9strccpl
+  // cudos1pryug3pp92fhn5qavdt2uxu32j3gv0v7vueuzs3ep8xelqd6exlsdgndla
 
-  const QUERY_GET_COUNT = { get_count: {} }
-  let count = await contract.query(QUERY_GET_COUNT, alice)
-  console.log('Initial count: ' + count.count)
+  const MSG_INIT = { text: 'hello!' }
+ 
+  const MSG_RESET = { reset: { text:  'hey'} }
+  const QUERY_GREETING = { get_greeting : {}}
+  const QUERY_REPLIES = { get_replies: {} }
 
-  const MSG_INCREMENT = { increment: {} }
-  const result = await contract.execute(MSG_INCREMENT, bob)
-  console.log(result)
-
-  count = await contract.query(QUERY_GET_COUNT)
-  console.log('Count after increment: ' + count.count)
+  const replies = await contract.query(QUERY_REPLIES, alice)
+  console.log(replies);
 }
 
 module.exports = { main: main }
