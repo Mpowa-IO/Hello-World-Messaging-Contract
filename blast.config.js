@@ -2,7 +2,7 @@
 module.exports.config = {
   addressPrefix: 'cudos',
   rustOptimizerVersion: '0.12.6',
-  gasPrice: '250acudos',
+  gasPrice: '5000000000000acudos',
 
   // optional parameners
   gasLimit: 'auto',
@@ -13,3 +13,5 @@ module.exports.config = {
     testnet: 'https://sentry1.gcp-uscentral1.cudos.org:36657'
   }
 }
+
+//cudos1zz89vvmdwxuww63034jhdvtu449w7hxyd4zt3rwylryd2nm3rkuqm37cut
