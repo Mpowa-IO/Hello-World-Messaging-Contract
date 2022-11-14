@@ -16,8 +16,8 @@ describe('alpha contract', () => {
 
   beforeAll(async () => {
     [alice, bob] = await bre.getSigners()
-    contract = await bre.getContractFactory('alpha')
-    await contract.deploy(MSG_INIT, 'alpha', { signer: bob })
+    contract = await bre.getContractFactory('messaging')
+    await contract.deploy(MSG_INIT, 'messaging', { signer: bob })
   })
 
   // test('query greeting', async () => {
