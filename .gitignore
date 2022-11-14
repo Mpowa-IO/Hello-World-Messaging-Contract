@@ -15,3 +15,5 @@ node_modules
 # accounts files
 local-accounts.json
 private-accounts.json
+
+cudos-data
