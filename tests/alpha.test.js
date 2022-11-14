@@ -20,10 +20,10 @@ describe('alpha contract', () => {
     await contract.deploy(MSG_INIT, 'alpha', { signer: bob })
   })
 
-  test('query greeting', async () => {
-    return expect(contract.query(QUERY_GREETING))
-      .resolves.toEqual('hello!')
-  })
+  // test('query greeting', async () => {
+  //   return expect(contract.query(QUERY_GREETING))
+  //     .resolves.toEqual('hello!')
+  // })
 
   test('respond to greeting', async () => {
     await contract.execute(MSG_RESPOND, alice)
@@ -42,14 +42,14 @@ describe('alpha contract', () => {
   
   })
 
-  test('reset greeting from owner', async () => {
-    await contract.execute(MSG_RESET, bob)
-    return expect(contract.query(QUERY_GREETING))
-    .resolves.toEqual('hey')
-  })
+  // test('reset greeting from owner', async () => {
+  //   await contract.execute(MSG_RESET, bob)
+  //   return expect(contract.query(QUERY_GREETING))
+  //   .resolves.toEqual('hey')
+  // })
 
-  test('reset greeting from unauthorised user throws unauthorized', () => {
-    return expect(contract.execute(MSG_RESET, alice))
-      .rejects.toThrow('Unauthorized')
-  })
+  // test('reset greeting from unauthorised user throws unauthorized', () => {
+  //   return expect(contract.execute(MSG_RESET, alice))
+  //     .rejects.toThrow('Unauthorized')
+  // })
 })
