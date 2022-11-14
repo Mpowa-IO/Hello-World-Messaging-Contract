@@ -87,8 +87,6 @@ This is a representation of the project structure. It is not exhaustive but high
 └── ...
 ```
 
-
-
 ---
 ## A short Overview
 
