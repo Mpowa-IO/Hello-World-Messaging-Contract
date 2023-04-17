@@ -6,8 +6,7 @@ use crate::error::ContractError;
 use crate::msg::{ExecuteMsg, InstantiateMsg, self, QueryMsg, ReplyResponse, ReplyInfo};
 use crate::state::{Config, CONFIG, Reply, REPLIES};
 
-// Note, you can use StdResult in some functions where you do not
-// make use of the custom errors
+
 #[entry_point]
 pub fn instantiate(
     deps: DepsMut,
@@ -24,7 +23,7 @@ pub fn instantiate(
     Ok(Response::default())
 }
 
-// And declare a custom Error variant for the ones where you will want to make use of it
+
 #[entry_point]
 pub fn execute(
     deps: DepsMut,
@@ -43,8 +42,8 @@ pub fn try_respond(
     info: MessageInfo, 
     response: String 
 ) -> Result<Response, ContractError> {
-    //check if the user has replied in the past, if may_load is none, load, otherwise return already signed error
-    let add_key: Addr = info.sender;
+    
+     let add_key: Addr = info.sender;
     if (REPLIES.may_load(deps.storage, &add_key.clone())?).is_some() {
         return Err(ContractError::AlreadyResponded {  });
     }

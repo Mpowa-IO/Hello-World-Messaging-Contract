@@ -2,7 +2,7 @@ const bre = require('cudos-blast')
 
 async function main() {
   const [alice, bob, bree] = await bre.getSigners()
-  const contract = await bre.getContractFromAddress('cudos1zz89vvmdwxuww63034jhdvtu449w7hxyd4zt3rwylryd2nm3rkuqm37cut') //subsitute the contract address with the contract address logged onto the console after running the deploy script
+  const contract = await bre.getContractFromAddress('Pass in your wallet address here') 
 
   const MSG_INIT = { text: 'hello!' }
  
